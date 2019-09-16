@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'as';
+  src: url('./dq.otf'),
+    url('./who.ttf');
+  /* IE9 */
+  font-weight: 600;
+  font-style: normal;
+}
+
+.hello {
+  color: red;
+  background: url('./icon.jpg');
+  font-family: 'as';
+}
