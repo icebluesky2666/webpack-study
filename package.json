@@ -4,22 +4,39 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open chrome",
+    "analyz": "NODE_ENV=production npm_config_report=true npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "private": true,
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^6.0.0",
+    "less-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^2.1.0",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.8"
+    "webpack-bundle-analyzer": "^3.5.1",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "less": "^3.10.3",
     "lodash": "^4.17.15"
   }
 }
