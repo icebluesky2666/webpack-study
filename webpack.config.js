@@ -1,27 +1,36 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// css单独打包文件
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// css压缩
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
+//js压缩
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+// es6语法优化
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// webpack
 const webpack = require('webpack');
 
 module.exports = {
+  //入口
   entry: {
     //apps: './src/index.js',
     //print: './src/print.js'
     app: './src/index.js'
   },
+  //出口
   output: {
     filename: '[name]-[hash].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  //dev-server
   devServer: {
     contentBase: './dist',
     hot: true
   },
+  //解析
   resolve: {
     alias: {
       vue$: path.resolve(__dirname, 'src/lib/vue/dist/vue.esm.js'),
@@ -32,9 +41,13 @@ module.exports = {
       jquery: 'jQuery'
     }, */
   },
+  // 打包目标
   target: 'web',
+  // 关联级别
   devtool: 'inline-source-map',
+  //模式
   mode: "production",
+  // 加载器
   module: {
     rules: [
       {
@@ -104,6 +117,7 @@ module.exports = {
       }
     ]
   },
+  //插件
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -137,6 +151,7 @@ module.exports = {
       }
     ),
   ],
+  //压缩
   optimization: {
     minimizer: [
       new OptimizeCSSAssetsPlugin({}),
