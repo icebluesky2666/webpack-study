@@ -37,7 +37,7 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "less": "^3.10.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "vue-cli": "^2.9.6"
   }
 }
